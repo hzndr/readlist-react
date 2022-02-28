@@ -1,38 +1,310 @@
-.App {
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu&display=swap");
+
+:root {
+  --primary: #032541;
+  --secondary: #ff7f3f;
+  --hover: #ff9661;
+  --white: #fff;
+}
+
+body {
+  font-family: "Source Sans Pro", sans-serif;
+  padding: 0;
+  margin: 0;
+}
+
+.container {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+.btn {
+  padding: 0.625rem 1rem;
+  background-color: var(--secondary);
+  color: var(--white);
+  border-radius: 0.3rem;
+  text-transform: uppercase;
+  display: inline-block;
+  border: none;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  line-height: 1.1;
+}
+
+.btn:hover {
+  background-color: var(--hover);
+  opacity: 1;
+  cursor: pointer;
+}
+
+.btn:disabled {
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+/* Header Styles */
+header {
+  background-color: var(--primary);
+}
+
+header .inner-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 1rem 0;
+}
+
+header a {
+  color: var(--white);
+  font-size: 1.25rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+header a:hover {
+  opacity: 0.7;
+}
+
+header .brand a {
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+header .brand .fas {
+  padding-right: 0.5rem;
+}
+
+header .nav-links ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: flex;
+  align-items: center;
+}
+
+header .nav-links li {
+  display: inline-block;
+  margin-right: 2rem;
+}
+
+header .nav-links li:last-child {
+  margin-right: 0;
+}
+
+/* Add Page */
+.hero {
+  background-image: url(../public/img/hero-bg.jpg);
+  background-position-y: center;
+  padding: 2rem;
+}
+
+.add-page-header {
+  font-size: 1.7rem;
+  padding: 3.125rem 1rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.add-page-header h1 {
+  color: var(--white);
+  font-size: 3rem;
+  margin: 2rem 0;
+}
+
+form input {
+  width: 100%;
+  background-color: var(--white);
+  color: var(--primary);
+  padding: 1rem 1.5rem;
+  border-radius: 5px;
+  border: none;
+  font-size: 1.25rem;
+}
+
+.results {
+  max-width: 700px;
+  padding: 0;
+  margin: 1.5rem auto;
+}
+
+.results li {
+  list-style: none;
+}
+
+.result-card {
+  display: flex;
+  padding: 2rem;
+  box-shadow: 4px 4px 14px -9px rgb(51, 51, 51);
+  margin-bottom: 1rem;
+  transition: all 0.2s ease-in-out;
+}
+
+.result-card p,
+.result-card h2 {
+  margin: 0.7rem 0;
+}
+
+.result-card:hover {
+  transform: scale(1.02);
+}
+
+/* Book Page */
+.book-page .header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.book-page .header h1 {
+  font-size: 2.7rem;
+  color: var(--primary);
+  margin: 2rem 0;
+}
+
+.count-pill {
+  display: block;
+  background-color: var(--secondary);
+  padding: 0.5rem 1rem;
+  font-size: 1.125rem;
+  font-weight: 600;
+  border-radius: 10rem;
+  color: var(--white);
+}
+
+.book-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 2rem;
+  padding: 0;
+  margin-top: 1rem;
+}
+
+@media (min-width: 992px) {
+  .book-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.book-grid li {
+  list-style: none;
+}
+
+.book-card {
+  width: 100%;
+  overflow: hidden;
+  box-shadow: 4px 4px 14px -9px rgb(51, 51, 51);
+  border-radius: 0.8rem;
+  padding: 1rem 1.5rem;
+  transition: all 0.2s ease-in-out;
+}
+
+.book-card:hover {
+  transform: scale(1.02);
+}
+
+.book-card-content {
+  margin-bottom: 2rem;
+}
+
+.book-card p,
+.book-card h2 {
+  margin: 0.8rem 0;
+}
+
+.book-card .inner-card-controls {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.book-card .inner-card-controls button {
+  flex: 0 0 12rem;
+}
+.ctrl-btn {
+  color: var(--primary);
+  background-color: var(--white);
+  border: 1px solid var(--secondary);
+  font-size: 1rem;
+}
+
+.ctrl-btn:hover {
+  color: var(--white);
+  background-color: var(--secondary);
+  cursor: pointer;
+}
+
+.no-books {
+  color: #c4c4c4;
+  font-size: 3rem;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.result-card {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  background-color: var(--white);
+  border-radius: 0.8rem;
+  padding: 0.8rem 1.5rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.result-card-content {
+  flex: 1 0 200px;
+  margin-right: 1.5rem;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.result-card .fas {
+  font-size: 2rem;
+  margin-right: 1rem;
+}
+
+.result-card-controls {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  flex: 1;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.result-card-controls button:first-child {
+  margin-bottom: 1rem;
 }
