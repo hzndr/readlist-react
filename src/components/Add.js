@@ -10,7 +10,7 @@ const Add = () => {
     setQuery(e.target.value);
     if (e.target.value) {
       fetch(
-        `http://openlibrary.org/search.json?title=${e.target.value}&limit=25`
+        `https://openlibrary.org/search.json?title=${e.target.value}&limit=25`
       )
         .then((res) => res.json())
         .then((data) => {
